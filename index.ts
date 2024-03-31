@@ -1,34 +1,42 @@
 #! /usr/bin/env node
+
 import inquirer from "inquirer"
-const answer = await inquirer.prompt ([
+const marks = await inquirer.prompt ([
     {
-        message: "tell me what percentage did you get?", 
+        message: "tell me how many marks did you get?", 
         type: "number",
-        name: "percentage"
+        name: "obtainedMarks"
+    },
+    {
+        message: "tell me what are the total marks?", 
+        type: "number",
+        name: "totalMarks"
     }
 ])
-    if(answer.percentage <= 40){
+
+console.log ("you got " +  marks.obtainedMarks*100/marks.totalMarks + "! percentage");
+
+    if(marks.obtainedMarks*100/marks.totalMarks <= 40){
         console.log("oh no! you are failed")
-    } else if (answer.percentage >= 40 && answer.percentage <= 49.99) {
+    } 
+    else if (marks.obtainedMarks*100/marks.totalMarks >= 40 && marks.obtainedMarks*100/marks.totalMarks <= 49.99) {
         console.log("CONGRATULATIONS! You got D grade ")
 
     }
-    else if (answer.percentage >= 50 && answer.percentage <= 59.99) {
+    else if (marks.obtainedMarks*100/marks.totalMarks >= 50 && marks.obtainedMarks*100/marks.totalMarks <= 59.99) {
         console.log("CONGRATULATIONS! You got C grade ")
-
+        
     }
-    else if (answer.percentage >= 60 && answer.percentage <= 69.99) {
+    else if (marks.obtainedMarks*100/marks.totalMarks >= 60 && marks.obtainedMarks*100/marks.totalMarks <= 69.99) {
         console.log("CONGRATULATIONS! You got B grade ")
 
     }
-    else if (answer.percentage >= 70 && answer.percentage <= 79.99) {
+    else if (marks.obtainedMarks*100/marks.totalMarks >= 70 && marks.obtainedMarks*100/marks.totalMarks <= 79.99) {
         console.log("CONGRATULATIONS! You got A grade ")
 
-    }
-    else if (answer.percentage >= 80 && answer.percentage <= 99.99) {
-        console.log("CONGRATULATIONS! You got A1 grade... BRILLIANT PERFORMANCE ")
+    }else if (marks.obtainedMarks*100/marks.totalMarks >= 80 && marks.obtainedMarks*100/marks.totalMarks <= 99.99) {
+        console.log("CONGRATULATIONS! You got A1 grade ")
 
     }
     else {console.log("something is wrong")
 }
-    // console.log(answer)

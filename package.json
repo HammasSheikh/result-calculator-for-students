@@ -1,6 +1,6 @@
 {
   "name": "results_grade_calculator_by_hammassheikh",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "a simple app which tell you which grade did you get with the help of your percentage",
   "main": "index.js",
   "type": "module",
